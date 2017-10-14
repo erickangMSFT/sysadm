@@ -1,0 +1,1 @@
+virt-clone --original template --name master --file /var/kvm/images/master.img 
