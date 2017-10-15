@@ -4,7 +4,5 @@ virt-clone --original template --name agent2 --file /var/kvm/images/agent2.img -
 
 
 
-uuidgen ens2
-
-vim /etc/hosts
-vim /etc/hostname
+#vim /etc/hosts
+#vim /etc/hostname

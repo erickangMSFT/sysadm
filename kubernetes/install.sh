@@ -1,0 +1,26 @@
+#!/bin/bash
+
+apt install ebtables ethtool
+
+apt-get update
+apt-get install -y docker.io
+
+apt-get update && apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+
+ufw enable
+ufw allow 22
+ufw allow 80
+ufw allow 6443
+ufw allow 2379:2380/tcp
+ufw allow 10250	
+ufw allow 10251
+ufw allow 10252
+ufw allow 10255
+ufw allow 30000:3276/tcp
+
