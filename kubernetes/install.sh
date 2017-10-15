@@ -22,5 +22,18 @@ ufw allow 10250
 ufw allow 10251
 ufw allow 10252
 ufw allow 10255
-ufw allow 30000:3276/tcp
+ufw allow 30000:32767/tcp
+
+sudo usermod -aG docker $USER
+
+kube init
+
+#pod network
+kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter.yaml
+
+KUBECONFIG=/etc/kubernetes/admin.conf kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter-all-features.yaml
+
+KUBECONFIG=/etc/kubernetes/admin.conf kubectl -n kube-system delete ds kube-proxy
+docker run --privileged --net=host gcr.io/google_containers/kube-proxy-amd64:v1.7.3 kube-proxy --cleanup-iptables
+
 
