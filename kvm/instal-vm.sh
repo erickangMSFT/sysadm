@@ -17,8 +17,6 @@ virt-install \
 --extra-args 'console=ttyS0,115200n8 serial'
 
 
-Starting install...     # installation starts
-
 # after installation, back to KVM host and shutdown the guest like follows
 virsh shutdown template 
 
@@ -26,5 +24,19 @@ virsh shutdown template
 guestmount -d template -i /mnt 
 ln -s /mnt/lib/systemd/system/getty@.service /mnt/etc/systemd/system/getty.target.wants/getty@ttyS0.service 
 umount /mnt
+
+
+systemctl enable serial-getty@ttyS0.service
+systemctl start serial-getty@ttyS0.service
+in guest VM in /etc/default/grub replace
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+#GRUB_TERMINAL=console
+by
+GRUB_CMDLINE_LINUX_DEFAULT="console=tty0 console=ttyS0"
+GRUB_TERMINAL="serial console"
+in guest VM run the following
+guest# update-grub
+
 
 virsh start template --console 
