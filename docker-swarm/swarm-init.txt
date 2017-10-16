@@ -1,0 +1,11 @@
+#!/bin/bash
+#init swarm
+docker swarm init --advertise-addr 10.0.8.77
+
+docker info
+
+docker node ls
+
+
+#join swarm
+docker swarm join --token SWMTKN-1-1vrq5a2fynl6uxb52h5cux5r1102bla5yrmgq0ft3tic490ds4-a22lh80dprkpwuwz6sx3itjqw 10.0.8.77:2377 
