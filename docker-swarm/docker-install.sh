@@ -13,6 +13,6 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-apt-get update && apt-get install -y docker-ce
+apt-get update && apt-get install -y docker-ce docker-compose htop 
 
 sudo usermod -aG docker $USER
