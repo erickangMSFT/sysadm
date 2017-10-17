@@ -3,7 +3,7 @@
 sudo adduser `id -un` kvm
 sudo adduser `id -un` libvirtd
 
-ubuntu-vm-builder kvm xenial \
+ubuntu-vm-builder kvm xenial \ 
     --domain template \
     --dest template \
     --arch amd64 \
@@ -18,4 +18,5 @@ ubuntu-vm-builder kvm xenial \
     --addpkg acpid \ 
     --addpkg vim \
     --addpkg openssh-server \
+    --addpkg avahi-daemon \
     --libvirt qemu:///system ;
