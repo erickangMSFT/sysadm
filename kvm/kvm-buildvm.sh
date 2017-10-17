@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo adduser `id -un` kvm
-sudo adduser `id -un` libvirtd
+#sudo adduser `id -un` kvm
+#sudo adduser `id -un` libvirtd
 
 ubuntu-vm-builder kvm xenial \ 
     --verbose \
