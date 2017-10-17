@@ -4,6 +4,7 @@ sudo adduser `id -un` kvm
 sudo adduser `id -un` libvirtd
 
 ubuntu-vm-builder kvm xenial \ 
+    --verbose \
     --domain template \
     --dest template \
     --arch amd64 \
