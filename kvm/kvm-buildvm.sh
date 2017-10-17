@@ -14,7 +14,7 @@ ubuntu-vm-builder kvm xenial \
     --swapsize 0 \
     --user erickang \
     --pass passwd \
-    --mirror http://us.archive.ubuntu.com/ubuntu/dists/ \
+    --mirror http://us.archive.ubuntu.com/ubuntu \
     --components 'main,universe,restricted' \
     --addpkg acpid \ 
     --addpkg vim \
