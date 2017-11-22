@@ -1,30 +1,5 @@
 #!/bin/bash
 
-apt install ebtables ethtool
-
-apt-get update
-apt-get install -y docker.io
-
-apt-get update && apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb http://apt.kubernetes.io/ kubernetes-xenial main
-EOF
-apt-get update
-apt-get install -y kubelet kubeadm kubectl nfs-common
-
-# ufw enable
-# ufw allow 22
-# ufw allow 80
-# ufw allow 6443
-# ufw allow 2379:2380/tcp
-# ufw allow 10250	
-# ufw allow 10251
-# ufw allow 10252
-# ufw allow 10255
-# ufw allow 30000:32767/tcp
-
-sudo usermod -aG docker $USER
-
 sudo kubeadm init --pod-network-cidr=111.111.0.0/16
 
+# Make sure save the output from this kubeadm init and follow the instruction.
