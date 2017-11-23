@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#must
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.0/Documentation/kube-flannel.yml
+#flannel network
+#kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.0/Documentation/kube-flannel.yml
 
+# calico network
+kubectl apply -f https://docs.projectcalico.org/v2.0/getting-started/kubernetes/installation/hosted/kubeadm/calico.yaml
 
 #optional
 kubectl apply -f https://git.io/weave-kube
