@@ -22,6 +22,8 @@ EOF
 apt-get update
 apt-get install -y kubelet kubeadm kubectl nfs-common
 
+sudo usermod -aG docker $USER
+
 # ufw enable
 # ufw allow 22
 # ufw allow 80
@@ -33,6 +35,6 @@ apt-get install -y kubelet kubeadm kubectl nfs-common
 # ufw allow 10255
 # ufw allow 30000:32767/tcp
 
-sudo usermod -aG docker $USER
+
 
 #------end of script

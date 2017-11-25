@@ -8,7 +8,7 @@ mkdir -p /var/kvm/images
 #k8snode
 virt-install \
 --name k8snode \
---ram 4096 \
+--ram 8192 \
 --disk path=/var/kvm/images/k8snode.img,size=50 \
 --vcpus 2 \
 --os-type linux \
