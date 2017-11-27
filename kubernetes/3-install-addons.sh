@@ -9,7 +9,7 @@
 #optional
 #kubectl apply -f https://git.io/weave-kube
 
-kubectl apply -f https://github.com/weaveworks/weave-kube/releases/download/latest_release/weave-daemonset.yaml
+#kubectl apply -f https://github.com/weaveworks/weave-kube/releases/download/latest_release/weave-daemonset.yaml
 
 
 kubectl apply --namespace kube-system -f "https://cloud.weave.works/k8s/scope.yaml?k8s-version=$(kubectl version | base64 | tr -d '\n')"
