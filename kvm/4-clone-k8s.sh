@@ -1,3 +1,7 @@
+#!/bin/bash
+
+#run as sudo su
+
 virt-clone --original k8snode --name master --file /var/kvm/images/master.img --replace
 guestmount -d master -i /mnt
 sed -i '2s/.*/127.0.1.1 k8s-master-erickang/' /mnt//etc/hosts

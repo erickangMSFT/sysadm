@@ -35,6 +35,4 @@ sudo usermod -aG docker $USER
 # ufw allow 10255
 # ufw allow 30000:32767/tcp
 
-
-
 #------end of script
