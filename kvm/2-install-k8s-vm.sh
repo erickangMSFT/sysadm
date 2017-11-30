@@ -9,7 +9,7 @@ mkdir -p /var/kvm/images
 virt-install \
 --name k8smaster \
 --ram 4096 \
---disk path=/var/kvm/images/k8snode.img,size=50 \
+--disk path=/var/kvm/images/k8smaster.img,size=50 \
 --vcpus 2 \
 --os-type linux \
 --os-variant ubuntu16.04 \
@@ -33,7 +33,7 @@ umount /mnt
 virt-install \
 --name k8sworker \
 --ram 12288 \
---disk path=/var/kvm/images/k8snode.img,size=50 \
+--disk path=/var/kvm/images/k8sworker.img,size=50 \
 --vcpus 2 \
 --os-type linux \
 --os-variant ubuntu16.04 \
