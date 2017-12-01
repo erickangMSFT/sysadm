@@ -25,6 +25,7 @@ apt-get install -y kubelet kubeadm kubectl nfs-common
 
 sudo usermod -aG docker $USER
 
+sudo sysctl net.bridge.bridge-nf-call-iptables=1
 # ufw enable
 # ufw allow 22
 # ufw allow 80
