@@ -9,19 +9,19 @@
 
 # ------------ script to run in k8snode
 
-apt install ebtables ethtool
+sudo apt install -y ebtables ethtool
 
-apt-get update
-apt-get install -y docker.io
-apt-get install -y apt-transport-https
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo apt-get install -y apt-transport-https
 
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
-apt-get update
-apt-get install -y kubelet kubeadm kubectl nfs-common
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl nfs-common
 
 sudo usermod -aG docker $USER
 

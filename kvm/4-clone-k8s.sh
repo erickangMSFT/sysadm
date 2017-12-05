@@ -21,9 +21,9 @@ sed -i '2s/.*/127.0.1.1 k8s-agent2-erickang/' /mnt/etc/hosts
 sed -i '1s/.*/k8s-agent2-erickang/' /mnt/etc/hostname
 umount /mnt
 
-virt-clone --original k8sworker --name agent3 --file /var/kvm/images/agent3.img --replace
-guestmount -d agent3 -i /mnt
-sed -i '2s/.*/127.0.1.1 k8s-agent3-erickang/' /mnt/etc/hosts
-sed -i '1s/.*/k8s-agent3-erickang/' /mnt/etc/hostname
-umount /mnt
+# virt-clone --original k8sworker --name agent3 --file /var/kvm/images/agent3.img --replace
+# guestmount -d agent3 -i /mnt
+# sed -i '2s/.*/127.0.1.1 k8s-agent3-erickang/' /mnt/etc/hosts
+# sed -i '1s/.*/k8s-agent3-erickang/' /mnt/etc/hostname
+# umount /mnt
 
